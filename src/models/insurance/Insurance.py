@@ -47,12 +47,16 @@ class Insurance (object):
 
         # gender - One Hot Encoding / Target Encoding
         #df5.loc[:, 'gender'] = df5['gender'].map( self.target_encode_gender_scaler )
+        df5['gender'] = df5['gender'].map( {'Female': 0, 'Male': 1} ).astype(int)
 
         # region_code - Target Encoding / Frequency Encoding
         df5.loc[:, 'region_code'] = df5['region_code'].map( self.target_encode_region_code_scaler )
 
         # vehicle_age - One Hot Encoding / Frequency Encoding
         df5 = pd.get_dummies( df5, prefix='vehicle_age', columns=['vehicle_age'] )
+        df5['Vehicle_Age_lt_1_Year']=df5['vehicle_age_below_1_year'].astype(int)
+        df5['Vehicle_Age_gt_2_Years']=df5['vehicle_age_between_1_2_year'].astype(int)
+        df5['Vehicle_Damage_Yes']=df5['vehicle_age_over_2_years'].astype(int)
 
         # policy_sales_channel - Target Encoding / Frequency Encoding
         df5.loc[:, 'policy_sales_channel'] = df5['policy_sales_channel'].map( self.fe_policy_sales_channel_scaler )
@@ -61,7 +65,7 @@ class Insurance (object):
         
         # Feature Selection
         cols_selected = ['annual_premium', 'vintage', 'age', 'region_code', 'vehicle_damage', 'previously_insured',
-                         'policy_sales_channel']
+                         'policy_sales_channel', 'vehicle_age_below_1_year', 'vehicle_age_between_1_2_year', 'vehicle_age_over_2_years', 'gender']
         
         
         return df5[ cols_selected ]

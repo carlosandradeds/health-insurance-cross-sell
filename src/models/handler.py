@@ -6,7 +6,7 @@ from insurance.Insurance import Insurance
 
 # loading model
 path = 'C:/Users/kaka/Projetos_DS/health-insurance-cross-sell/'
-model = pickle.load( open( path + 'src/models/model_linear_regression.pkl', 'rb' ) )
+model = pickle.load( open( path + 'src/models/model_xgb_.pkl', 'rb' ) )
 
 # initialize API
 app = Flask( __name__ )
