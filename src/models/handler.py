@@ -21,7 +21,9 @@ def health_insurance_predict():
             
         else: # multiple example
             test_raw = pd.DataFrame( test_json, columns=test_json[0].keys() )
-            
+
+        test_raw_copy = test_raw.copy()
+
         # Instantiate Rossmann class
         pipeline = Insurance()
         
@@ -35,7 +37,7 @@ def health_insurance_predict():
         df3 = pipeline.data_preparation( df2 )
         
         # prediction
-        df_response = pipeline.get_prediction( model, test_raw, df3 )
+        df_response = pipeline.get_prediction( model, test_raw_copy, df3 )
         
         return df_response
     
