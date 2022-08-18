@@ -1,5 +1,7 @@
 # Health Insurance Cross Sell
 
+![title](/img/download.jpg)
+
 ## Descrição do Problema
 
 Uma empresa que oferece seguros de saúde para seus clientes, a Insurance All, conta agora com a possibilidade de oferecer um novo produto aos seus clientes: um seguro de automóveis.
@@ -140,7 +142,9 @@ Agora considerando os clientes que não foram entrevistados, 40 mil ligações d
 
 # 8. Conclusão
 
-O modelo foi publicado na cloud do Heroku e implementado em uma planilha do Google Sheets ().
+O modelo foi publicado na cloud do Heroku e implementado em uma planilha do Google Sheets  - (https://docs.google.com/spreadsheets/d/1qICeV_lMYhm62FiF57_pd8icEWqxC_J8wvvi1wLF6qo/edit#gid=0).
+
+![gif](/img/sheets.gif)
 
 A planilha então pode ser utilizada por qualquer funcionário e estabelecer um ranking dos clientes com maior probabilidade de adquirir o seguro. 
 
